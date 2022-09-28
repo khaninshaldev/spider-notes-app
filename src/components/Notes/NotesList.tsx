@@ -6,18 +6,25 @@ import NoteItem from "./NoteItem";
 
 const NotesList = () => {
   const notes = useRecoilValue(notesState);
+
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-      {notes?.map((note) => {
-        return (
-          <NoteItem
-            key={note.id}
-            id={note.id}
-            content={note.content}
-            createdAt={note.createdAt}
-          />
-        );
-      })}
+      {notes.length != 0 ? (
+        <>
+          {notes.map((note) => {
+            return (
+              <NoteItem
+                key={note.id}
+                id={note.id}
+                content={note.content}
+                createdAt={note.createdAt}
+              />
+            );
+          })}
+        </>
+      ) : (
+        <p>Oh shit, you have no notes! :(</p>
+      )}
     </Grid>
   );
 };

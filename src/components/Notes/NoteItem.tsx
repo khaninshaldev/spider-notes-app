@@ -1,13 +1,11 @@
 import { GridItem, Heading, Text, useDisclosure } from "@chakra-ui/react";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
 import { Note } from "../../types";
 import NoteDetails from "./NoteDetails";
 
 const NoteItem = ({ id, content, createdAt }: Note) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const date = moment(createdAt).fromNow();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -27,9 +25,9 @@ const NoteItem = ({ id, content, createdAt }: Note) => {
       </GridItem>
 
       <NoteDetails
+        id={id}
         content={content}
         createdAt={createdAt}
-        onOpen={onOpen}
         onClose={onClose}
         isOpen={isOpen}
       />
