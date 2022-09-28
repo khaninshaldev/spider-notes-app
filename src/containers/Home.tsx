@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Layout/Navbar";
 import NotesList from "../components/Notes/NotesList";
 
@@ -9,6 +10,7 @@ const Home = () => {
         <Navbar />
         <NotesList />
       </Box>
+      <Outlet />
     </>
   );
 };
