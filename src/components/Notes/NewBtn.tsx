@@ -7,7 +7,9 @@ const NewBtn: React.FC = () => {
 
   return (
     <>
-      <Button onClick={onOpen}>New</Button>
+      <Button colorScheme="twitter" onClick={onOpen}>
+        New
+      </Button>
 
       <NewNoteModal isOpen={isOpen} onClose={onClose} />
     </>

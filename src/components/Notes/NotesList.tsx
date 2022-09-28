@@ -23,7 +23,7 @@ const NotesList = () => {
           })}
         </>
       ) : (
-        <p>Oh shit, you have no notes! :(</p>
+        <p>Oh sadly, you have no notes! :(</p>
       )}
     </Grid>
   );
